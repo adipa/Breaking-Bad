@@ -1,25 +1,24 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import CharacterList from "./components/CharacterList"
-import CharacterDetail from "./components/CharacterDetail"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import CharacterList from "./components/CharacterList";
+import CharacterDetail from "./components/CharacterDetail";
 
-function App() {
+const App = () => {
   return (
-    <Router >
+    <Router>
       <div>
         <Switch>
           <Route exact path="/">
             <CharacterList />
           </Route>
-          <Route path="/:id" render={(props) => <CharacterDetail {...props} />} />
+          <Route
+            path="/:id"
+            render={(props) => <CharacterDetail {...props} />}
+          />
         </Switch>
-      </div >
-    </Router >
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
