@@ -19,7 +19,7 @@ import http from "../http-common";
 
 class CharacterService {
     getList(page) {
-        const offset = `${(page - 1) * 10}`;
+        const offset = (page - 1) * 10;
         return http.get("?limit=10&offset=" + offset);
 
     }
@@ -29,12 +29,12 @@ class CharacterService {
     }
 
     getByName(name) {
-        return http.get("?name=" + `${name}`);
+        return http.get("?name=" + name);
     }
 
     getByCategory(category) {
         console.log(category);
-        return http.get("?category=" + `${category}`);
+        return http.get("?category=" + category);
     }
 
 }

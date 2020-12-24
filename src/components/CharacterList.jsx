@@ -58,14 +58,13 @@ const CharacterList = () => {
         setCategory(value.props.value);
         (value.props.value) ? setPagination(false) : setPagination(true);
         setName("");
-        { !value.props.value && retrieveCharacters(); }
+        !value.props.value && retrieveCharacters();
     };
 
     const retrieveCharacters = () => {
         CharacterService.getList(page)
             .then((response) => {
                 setCharacters(response.data);
-                console.log(characters);
                 console.log(response.data.length);
             })
             .catch((e) => {
